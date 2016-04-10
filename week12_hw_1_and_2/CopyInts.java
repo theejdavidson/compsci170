@@ -23,5 +23,14 @@ public class CopyInts // in CopyFile.java in the Sakai Week 12 Source Code folde
 		scanner.close();
 		Collections.sort(num);
 		System.out.println(num);
+		Integer previousNum = null;
+		for(Integer currentNum: num)
+		{
+			if(previousNum==null || previousNum.compareTo(currentNum) != 0)
+			{
+				System.out.println(currentNum);
+				previousNum=currentNum;
+			}
+		}
 	}
 }
