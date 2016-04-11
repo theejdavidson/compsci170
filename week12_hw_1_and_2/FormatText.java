@@ -7,6 +7,10 @@ public class FormatText // in CopyFile.java in the Sakai Week 12 Source Code fol
 	{
 		return c == ' ' || c == '\t' || c == '\n';
 	}
+	public static boolean isPunctuation(char c)
+	{
+		return c == '.' || c == '?' || c == '!';
+	}
 	public static void main(String[] args) // uses program command line arguments
 	{
 		if (args.length != 2) {
@@ -32,6 +36,7 @@ public class FormatText // in CopyFile.java in the Sakai Week 12 Source Code fol
 		System.out.println(String.format("File has %s has %d lines ", args[0], lines.size()));
 		boolean currentIsWhiteSpace = false;
 		boolean prevWasWhiteSpace = false;
+		boolean punctMode = true;
 		for (int i=0; i<lines.size();i++)
 		{
 			String currentLine = lines.get(i);
@@ -46,7 +51,21 @@ public class FormatText // in CopyFile.java in the Sakai Week 12 Source Code fol
 				(currentIsWhiteSpace == true && prevWasWhiteSpace == false);					
 				if(shouldPrint)
 				{
-					System.err.println(String.format("%c --> is white space %b previous was white %b", c, currentIsWhiteSpace, prevWasWhiteSpace));
+					if(punctMode && currentIsWhiteSpace == false && !isPunctuation(c))
+					{
+						System.err.print(Character.toUpperCase(c));
+						punctMode = false;
+						//System.err.println("\n\n leaving punct mode on :" +c);
+					}
+					else
+					{
+						System.err.print(c);
+						punctMode = punctMode || isPunctuation(c);
+						if(punctMode)
+						{
+							//System.err.println("\n\n entering punct mode on :" +c);
+						}
+					}
 				}
 				prevWasWhiteSpace = currentIsWhiteSpace;
 				
