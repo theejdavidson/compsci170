@@ -39,6 +39,10 @@ public class FormatText // in CopyFile.java in the Sakai Week 12 Source Code fol
 		boolean punctMode = true;
 		for (int i=0; i<lines.size();i++)
 		{
+			if(i > 0 && prevWasWhiteSpace == false)
+			{
+				outStream.print('\n');
+			}
 			String currentLine = lines.get(i);
 			char [] charArray = currentLine.toCharArray();
 			
@@ -53,17 +57,20 @@ public class FormatText // in CopyFile.java in the Sakai Week 12 Source Code fol
 				{
 					if(punctMode && currentIsWhiteSpace == false && !isPunctuation(c))
 					{
-						System.err.print(Character.toUpperCase(c));
+						if(prevWasWhiteSpace == false)
+						{
+							outStream.print(' ');
+						}
+						outStream.print(Character.toUpperCase(c));
 						punctMode = false;
 						//System.err.println("\n\n leaving punct mode on :" +c);
 					}
 					else
 					{
-						System.err.print(c);
-						punctMode = punctMode || isPunctuation(c);
-						if(punctMode)
-						{
-							//System.err.println("\n\n entering punct mode on :" +c);
+						/// punctMode may be false - but we may want to set it
+						if(!punctMode) {
+							punctMode = isPunctuation(c);
+							outStream.print(c);
 						}
 					}
 				}
