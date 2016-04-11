@@ -3,6 +3,10 @@ import java.io.*;
 
 public class FormatText // in CopyFile.java in the Sakai Week 12 Source Code folder
 {
+	public static boolean isWhiteSpace(char c)
+	{
+		return c == ' ' || c == '\t' || c == '\n';
+	}
 	public static void main(String[] args) // uses program command line arguments
 	{
 		if (args.length != 2) {
@@ -19,28 +23,33 @@ public class FormatText // in CopyFile.java in the Sakai Week 12 Source Code fol
 			System.out.println("Error: could not create output file " + args[1]);
 			System.exit(0);
 		}
-		List<String> words = new ArrayList<String>();
+		List<String> lines = new ArrayList<String>();
 		while(scanner.hasNext())
 		{
-			words.add(scanner.next());
+			lines.add(scanner.nextLine());
 		}
 		scanner.close();
-			System.out.println(String.format("File has %s has %d words ", args[0], words.size()));
-
-		for (int i=0; i<words.size();i+=2)
+		System.out.println(String.format("File has %s has %d lines ", args[0], lines.size()));
+		boolean currentIsWhiteSpace = false;
+		boolean prevWasWhiteSpace = false;
+		for (int i=0; i<lines.size();i++)
 		{
-			boolean isEven = false;
-			if((i%2) == 0)
-			{
-				isEven = true;
-			}
-			if(words.size()>(i+1))
-			{
-				outStream.println(String.format("%s %s", words.get(i), words.get(i+1)));
-			}
-			else
-			{
-				outStream.println(String.format("No last name for %s", words.get(i)));
+			String currentLine = lines.get(i);
+			char [] charArray = currentLine.toCharArray();
+			
+			char firstWhiteSpace = ' ';
+			
+			for(char c: charArray)
+			{	
+				currentIsWhiteSpace = isWhiteSpace(c);
+				boolean shouldPrint = (currentIsWhiteSpace == false) || 
+				(currentIsWhiteSpace == true && prevWasWhiteSpace == false);					
+				if(shouldPrint)
+				{
+					System.err.println(String.format("%c --> is white space %b previous was white %b", c, currentIsWhiteSpace, prevWasWhiteSpace));
+				}
+				prevWasWhiteSpace = currentIsWhiteSpace;
+				
 			}
 		}
 		outStream.close();
