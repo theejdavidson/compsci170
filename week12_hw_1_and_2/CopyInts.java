@@ -16,6 +16,12 @@ public class CopyInts // in CopyFile.java in the Sakai Week 12 Source Code folde
 			System.exit(0);
 		}
 		int[] numbers = IO.readAllInts(args[0]);
+		if(numbers == null || numbers.length == 0)
+		{
+			System.out.println("No numbers found in file "+ args[0]);
+			System.exit(0);
+		}
+		
 		Arrays.sort(numbers);
 		Integer previousNum = null;
 		for(Integer currentNum: numbers)
