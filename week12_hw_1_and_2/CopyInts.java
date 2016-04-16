@@ -10,7 +10,7 @@ public class CopyInts // in CopyFile.java in the Sakai Week 12 Source Code folde
 			System.out.println("Usage: CopyFile inputFile outputFile");
 			System.exit(0);
 		}
-		PrintStream outStream = IO.newFile(args[1]); // assure output doesn’t exist yet
+		PrintStream outStream = IO.newFile(args[1]); 
 		 if (outStream == IO.outError) {
 			System.out.println("Error: could not create output file " + args[1]);
 			System.exit(0);

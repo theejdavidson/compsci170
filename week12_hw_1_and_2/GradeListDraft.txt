@@ -1,0 +1,13 @@
+import java.util.*;
+
+
+public class GradeListDraft
+{
+	public static void main(String[] args) // uses program command line arguments
+	{
+		boolean
+		System.out.println("Please enter an integer grade for the arraylist: ");
+		
+		List<String> words = new ArrayList<String>();
+	}
+}
