@@ -13,8 +13,8 @@ public class GradeList
       while (!done)
       {
           System.out.println("Type an entry:");
-          String entry = keyboard.nextLine( );
-          toDoList.add(entry);
+          int entry = keyboard.nextInt( );
+          gradeList.add(entry);
           System.out.print("More items for the list? ");
 
           String ans = keyboard.nextLine( );
@@ -23,13 +23,13 @@ public class GradeList
       }
 
       System.out.println("The list contains:");
-      int listSize = toDoList.size( );
+      int listSize = gradeList.size( );
       for (int position = 0; position < listSize; position++)
-          System.out.println(toDoList.get(position));
+          System.out.println(gradeList.get(position));
 
 /* Alternate code for displaying the list
       System.out.println("The list contains:");
-      for (String element : toDoList)
+      for (String element : gradeList)
           System.out.println(element);
 */
    }
