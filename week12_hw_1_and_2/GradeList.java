@@ -12,14 +12,11 @@ public class GradeList
 
       while (!done)
       {
-          System.out.println("Type an entry:");
+          System.out.println("Type an entry, type -1 to end:");
           int entry = keyboard.nextInt( );
-          gradeList.add(entry);
-          System.out.print("More items for the list? ");
-
-          String ans = keyboard.nextLine( );
-          if (!ans.equalsIgnoreCase("yes"))
+		    if (entry != -1)
               done = true;
+          gradeList.add(entry);
       }
 
       System.out.println("The list contains:");
