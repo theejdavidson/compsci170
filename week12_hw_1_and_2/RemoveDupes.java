@@ -19,7 +19,8 @@ public class RemoveDupes {
 		}
 		scanner.close();
 			System.out.println(String.format("File %s has %d unique names ", args[0], names.size()));
-		
+		for(String name : names)
+		System.out.println(name);
 
     }
 }
