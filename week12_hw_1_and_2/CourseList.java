@@ -13,7 +13,7 @@ public class  CourseList{
               break;
 			}
 		  String courseName = keyboard.next();
-		  System.out.println(String.format("%s --> %s", studentId, courseName));
+		 // System.out.println(String.format("%s --> %s", studentId, courseName));
 		  ArrayList<String> studentCourses = students.get(studentId);
 		  
 		  if(studentCourses == null)
@@ -29,6 +29,9 @@ public class  CourseList{
 			  System.out.println(studentCourses);
 		  }
 		}
-		
+		for(Map.Entry<Integer, ArrayList<String>> entry: students.entrySet())
+		{
+			System.out.println(String.format("%s --> %s", entry.getKey(), entry.getValue()));
+		}
     }
 }
