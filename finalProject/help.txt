@@ -1,0 +1,11 @@
+Place options:
+To go to the grocery store, type 'gs'
+To go to the gas station, type 'gas'
+To go to the mountains, type 'm'
+To go to the sporting goods store, type 'sgs'
+To go to the farm, type 'f'
+To go to the police station, type 'ps'
+Type 's' to view your supplies
+Type 'restart' to restart the game
+Type 'quit' to quit the game
+To view place options and possible commands again, type 'help'

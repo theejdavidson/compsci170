@@ -1,0 +1,11 @@
+		this is the first sentence.
+		
+	the first character of this sentence should be capitalized
+and this sequence 	should     not end the sentence: .?!text but
+	this sequence should: end! this is a new sentence.
+a new sentence starts here?
+
+	another new sentence starts here
+	
+
+and ends here!		 the final sentence in the file.
