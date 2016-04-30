@@ -1,117 +1,115 @@
 import java.util.ArrayList;
+import java.util.*;
 
 public class Main {
 
     public static void main(String args[]) {
 
         // Build rooms
-        final int WIDTH = 2;
+      /*  final int WIDTH = 2;
         final int HEIGHT = 2;
-        Room[][] room = new Room[WIDTH][HEIGHT];
-        Rooms.build(room, WIDTH, HEIGHT);
-        int x = 0;
-        int y = 0;
-        int score = 0;
-
-        // Load inventory
-        ArrayList<String> inventory = new ArrayList<>();
+       Room[][] room = new Room[WIDTH][HEIGHT];
+        // Rooms.build(room, WIDTH, HEIGHT);
+		*/
+		read stuff = new read();
+		need  x = new need();
+		Scanner keyboard = new Scanner(System.in);
+		 Place set = new Place();
+        
+       
         
         // Title Screen
-    	System.out.println("+-------------------------------+");
-    	System.out.println("| Text Adventure: Skeleton Code |");
-    	System.out.println("+-------------------------------+");
+    	stuff.readAndPrintFile("Intro.txt");
+		stuff.readAndPrintFile("help.txt");
     	
-    	// Print starting room description
-    	Rooms.print(room, x, y);
+    	// Print starting place description
+    	
 
         // Start game loop
+		int days = 0;
         boolean playing = true;
-        while (playing) {
-
+        while (days <10) {
+			
+				days ++;
+				System.out.println("Day: " + days);
+				System.out.println("Where do you want to go today?");
         	// Get user input
-            String input = Input.getInput();
+           String input = keyboard.nextLine();
 
             // Movement commands
-            if (input.equals("n")) {
-                if (y > 0) {
-                    y--;
-                    Rooms.print(room, x, y);
-                } else {
-                    System.out.println("You can't go that way.");
+            if (input.equalsIgnoreCase("gs")) {
+               set.Number(1);
+				
                 }
-            } else if (input.equals("s")) {
-                if (y < HEIGHT - 1) {
-                    y++;
-                    Rooms.print(room, x, y);
-                } else {
-                    System.out.println("You can't go that way.");
-                }
-            } else if (input.equals("e")) {
-                if (x > 0) {
-                    x--;
-                    Rooms.print(room, x, y);
-                } else {
-                    System.out.println("You can't go that way.");
-                }
-            } else if (input.equals("w")) {
-                if (x < WIDTH - 1) {
-                    x++;
-                    Rooms.print(room, x, y);
-                } else {
-                    System.out.println("You can't go that way.");
-                }
+             else if (input.equalsIgnoreCase("f")) {
+				set.Number(2);
+                
+            } else if (input.equalsIgnoreCase("ps")) {
+                set.Number(3);
+            } else if (input.equalsIgnoreCase("m")) {
+               set.Number(4);
+            }
+			else if (input.equalsIgnoreCase("sgs")) {
+                set.Number(5);
+            } else if (input.equalsIgnoreCase("gas")) {
+				set.Number(6);   
+            } else if (input.equalsIgnoreCase("home")) {
+				set.Number(7);   
             }
 
             // Look commands
-            else if (input.equals("look")) {
-                Rooms.print(room, x, y);
-            }
+           
 
             // Get commands
-            else if (input.length() > 4  && input.substring(0, 4).equals("get ")) {
+          /*  else if (input.length() > 4  && input.substring(0, 4).equals("get ")) {
             	if (input.substring(0, input.indexOf(' ')).equals("get")) {
             		if (input.substring(input.indexOf(' ')).length() > 1) {
             			String item = input.substring(input.indexOf(' ') + 1);
                     	score = Inventory.checkItem(x, y, item, inventory, room, score);
             		}	
             	}
-            }
+            }*/
 
             // Inventory commands
-            else if (input.equals("i") || input.equals("inv")
-                    || input.equals("inventory")) {
+          /*  else if (input.equalsIgnoreCase("i") || input.equalsIgnoreCase("inv")
+                    || input.equalsIgnoreCase("inventory")) {
                 Inventory.print(inventory);
-            }
+            }*/
+            else if(input.equalsIgnoreCase("s")){
+				x.print();
+				days--;
+			}
+           
             
-            else if (input.equals("score")) {
-            	System.out.println("Score: " + score + "/500");
-            }
-            
-            else if (input.equals("restart")) {
+            else if (input.equalsIgnoreCase("restart")) {
             	System.out.println();
             	Main.main(args);
             }
             
-            else if (input.equals("help")) {
-            	System.out.println("Type 'n'/'e'/'s'/'w' to move around");
-            	System.out.println("Type 'look' for a description of the room you're in");
-            	System.out.println("Type 'get' + the item to get something");
-            	System.out.println("Type 'i' to view your inventory");
-            	System.out.println("Type 'score' to view your score");
-            	System.out.println("Type 'restart' to restart the game");
-            	System.out.println("Type 'quit' to quit the game");
+            else if (input.equalsIgnoreCase("help")) {
+            	stuff.readAndPrintFile("help.txt");
+				days--;
             }
             
             // Quit commands
-            else if (input.equals("quit")) {
+            else if (input.equalsIgnoreCase("quit")) {
                 System.out.println("Goodbye!");
-                playing = false;
+                break;
 
             // Catch-all for invalid input
             } else {
                 System.out.println("You can't do that.");
+				days--;
             }
+			if(x.getGas() >= 10 && x.getFood() >= 10 && x.getWater() >=10){
+				stuff.readAndPrintFile("YouWin.txt");
+				break;
+			}
+			else if(days == 10){
+				stuff.readAndPrintFile("YouLose.txt");
+			}
         }
-        System.exit(0);
+	}
+        
     }
-}
+

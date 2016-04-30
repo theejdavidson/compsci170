@@ -1,41 +1,39 @@
 import java.util.ArrayList;
 import java.util.*;
-class Places2 {
+class Place {
  
-	Scanner input = new Scanner(System.in);
+	Scanner keyboard = new Scanner(System.in);
+	
 	public static void Number(int room){
 		read input = new read();
 		// grocery store
 		if(room == 1){
-			input.readFile("grocery.txt");
-			System.out.println("You can go to the Deli(a), aisle(b) and the parking lot(c)");
-			
-		/*	if(input.equalsIgnoreCase("a")){
-				
-			}
-			else if(input.equalsIgnoreCase("b")){
-				
-		*/	}
+			input.readAndPrintFile("grocery.txt");
+			//Options for user inside grocery store
+			keyboard.nextLine();
 		}
 		// farm
 		else if (room == 2){
-			input.readFile("farm.txt");
+			input.readAndPrintFile("farm.txt");
 		}
 		//police station
 		else if(room == 3){
-			input.readFile("police.txt");
+			input.readAndPrintFile("police.txt");
 		}
 		//mountain
 		else if(room == 4){
-			input.readFile("mountain.txt");
+			input.readAndPrintFile("mountain.txt");
 		}
 		//sporting goods stroe
 		else if(room == 5){
-			input.readFile("sporting.txt");
+			input.readAndPrintFile("sporting.txt");
 		}
 		//gas station
 		else if(room == 6){
-			input.readFile("gas.txt");
+			input.readAndPrintFile("gas.txt");
+		}
+		else if(room == 7){
+			input.readAndPrintFile("home.txt");
 		}
 		else{
 			System.out.println("Error");

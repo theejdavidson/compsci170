@@ -1,2 +1,5 @@
 You approach your local sporting goods store. The doors leading into the building have been destroyed, 
 leaving anything inside ripe for the taking. You enter the building and start your search for supplies.
+Input 'a' to scope out the hunting section
+Input 'b' to scout the camping section
+Input 'c' to touch base with the baseball section

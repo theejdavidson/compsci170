@@ -4,14 +4,14 @@ import java.io.*;
 public class read{
 	private String filename;
 	
-	public static void readFile(String file){
+	public static void readAndPrintFile(String file){
 		TreeSet<String> names = new TreeSet<String>();
 		System.out.println();
 		try{
 			Scanner input = new Scanner(System.in);
 			Scanner sc = new Scanner(System.in);
-			File readFile = new File(file);
-			sc = new Scanner(readFile);
+			File readAndPrintFile = new File(file);
+			sc = new Scanner(readAndPrintFile);
 			
 			while(sc.hasNextLine()){
 				String temp = sc.nextLine();

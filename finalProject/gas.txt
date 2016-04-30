@@ -1,3 +1,5 @@
 You approach your local gas station. The shattered door creaks as it hangs from one hinge. 
 Its single pump lies in wait. You start your search for gas.
-
+Input 'a' to climb behind the gas station counter
+Input 'b' to see what is up with the gas pump
+Input 'c' to observe the inside of the store

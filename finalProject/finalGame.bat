@@ -1,6 +1,6 @@
 javac read.java
-javac Main2.java
-javac Rooms2.java
+javac Main.java
+javac Place.java
 javac need.java
 
 
@@ -8,5 +8,5 @@ javac need.java
 @echo ERROR: Fix your code
 ) else (
  del 
- java Main2 
+ java Main
 ) 

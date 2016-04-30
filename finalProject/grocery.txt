@@ -1,1 +1,4 @@
 You approach your local grocery store. The cart littered lot stands erriely silent. Upon entering, a rancid smell hits your nostrils. All fresh food has gone rotten and hundreds of flies infest the store. You start your search for food and water.
+Input 'a' to investigate the Deli
+Input 'b' to casually browse the Aisle
+Input 'c' to mess around in the Parking lot
