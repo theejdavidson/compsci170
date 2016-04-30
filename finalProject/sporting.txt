@@ -1,5 +1,4 @@
-You approach your local sporting goods store. The doors leading into the building have been destroyed, 
-leaving anything inside ripe for the taking. You enter the building and start your search for supplies.
+You enter the Sporting Goods Store.  Basketballs sit deflated on the tile floor, a corpse sits limp in front of the checkout aisle, having been impaled with a lacrosse stick.  A pile of strange white powder has been spilled across the floor.  You rub your finger across it and give it a taste.  This is some high quality whey protien powder.
 Input 'a' to scope out the hunting section
-Input 'b' to scout the camping section
+Input 'b' to scout the camping and survival section
 Input 'c' to touch base with the baseball section

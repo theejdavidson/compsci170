@@ -1,4 +1,4 @@
-You approach your local grocery store. The cart littered lot stands erriely silent. Upon entering, a rancid smell hits your nostrils. All fresh food has gone rotten and hundreds of flies infest the store. You start your search for food and water.
+You approach your local grocery store. Shopping carts are strewn across the parking lot.  Tumbleweed-like masses of coupon clippings roll gracefully across, carried by the wind.  This is nearly as desolate a scene as the aftermath of the Black Friday sales last year.  Upon entering, a wave of rotting air hits your nostrils.  All perishable food has spoiled and hundreds of flies are buzzing around the store.
 Input 'a' to investigate the Deli
 Input 'b' to casually browse the Aisle
 Input 'c' to mess around in the Parking lot
